@@ -1,0 +1,22 @@
+<h1> The articles </h1>
+<p>/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/</p>
+
+<% @articles.each do |art| %>
+  <h2><%= art.title %></h2>
+<% end %>
+
+<p>/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/</p>
+
+<% @articles.each do |t| %>
+<ul>
+  <li><%= link_to t.name, article_path(t) %>
+</li>
+  <li><%= link_to "edit", edit_article_path(t) %></li>
+  <li><%= link_to "Delete", article_path(t),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></li>
+</ul>
+<% end %>
+<p>/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/+/</p>
+
+ <%= link_to "new", new_article_path %>
